@@ -1,9 +1,14 @@
 package actividad_1;
 
 public class Operacion {
-    float resultado;
+    private float resultado;
     
-    public float ObtenerResultado(float dato1, float pendiente){
-        return resultado = (dato1 / pendiente) * 100; 
+    public float ObtenerResultado(Escalon[] escalon, float pendiente){
+        float sumaLongitudEscalones = 0;
+        
+        for (Escalon escalon1 : escalon) {
+            sumaLongitudEscalones += escalon1.getLongitud();
+        }
+        return resultado = (sumaLongitudEscalones / pendiente) * 100; 
     }
 }

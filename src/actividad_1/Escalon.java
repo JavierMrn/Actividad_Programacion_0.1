@@ -1,8 +1,8 @@
 package actividad_1;
 
 public class Escalon {
-    private float longitud;
-    private String material;
+    private final float longitud;
+    private final String material;
 
     public Escalon(float longitud, String material) {
         this.longitud = longitud;

@@ -1,9 +1,9 @@
 package actividad_1;
 
 public class Persona {
-    private String nombre;
-    private int edad;
-    private float peso;
+    private final String nombre;
+    private final int edad;
+    private final float peso;
 
     public Persona(String nombre, int edad, float peso) {
         this.nombre = nombre;
