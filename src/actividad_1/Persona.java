@@ -10,4 +10,20 @@ public class Persona {
         this.edad = edad;
         this.peso = peso;
     }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public float getPeso() {
+        return peso;
+    }
+    
+    public void MostrarInformacion(){
+        System.out.println("Nombre: " + nombre + "\n" + "Edad: " + edad + "\n" + "Peso: " + peso);
+    }
 }
