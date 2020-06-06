@@ -2,23 +2,27 @@ package actividad_1;
 
 import javax.swing.JOptionPane;
 
-public class Main {
+public class Main{
     public static void main(String[] args){
-        Persona persona1 = new Persona("Juan", 20, 67);
-        Escalon[] escalones = new Escalon[2];
-        Operacion resultados = new Operacion();
+        //Creación de Objetos
+        Persona persona1 = new Persona("",0,0.0f);
+        Escalon[] escalones;
+        Logica logicaCentral = new Logica();
+        
+        //Variables
+        int numeroEscalones;
         float pendiente;
         
-        for (int i = 0; i < escalones.length; i++) {
-            String material = JOptionPane.showInputDialog("Material del escalon " + (i+1) + ": "); 
-            float longitud =(float)Double.parseDouble(JOptionPane.showInputDialog("Longitud del escalon " + (i + 1) + ": "));
-            escalones[i] = new Escalon(longitud,material);
-        }
-        
+        //Pedir Información al usuario y estblecer los valores a las variables de clase
+        logicaCentral.establecerInformacionPersona(persona1);
+        numeroEscalones = Integer.parseInt(JOptionPane.showInputDialog("Cuantos escalones hay?"));
+        escalones = new Escalon[numeroEscalones];
+        logicaCentral.establecerInformacionEscalon(escalones);
         pendiente = (float) Double.parseDouble(JOptionPane.showInputDialog("Pendiene Deseada: "));
         
+        //Imprimir Resultados
         System.out.println("El usuario con la siguiente información: ");
         persona1.MostrarInformacion();
-        System.out.println("Necesita una longitud de " + resultados.ObtenerResultado(escalones, pendiente));
+        System.out.println("Necesita una longitud de " + logicaCentral.obtenerResultado(escalones, pendiente) + " cm");
     }
 }
